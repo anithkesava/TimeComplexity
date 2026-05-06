@@ -1,4 +1,6 @@
-﻿namespace Big_O_notation
+﻿using Big_O_notation.Patterns.TwoPointer;
+
+namespace Big_O_notation.Main
 {
     public class TimeComplexity
     {
@@ -11,9 +13,79 @@
 
             var arr = new int[] { 2, 1, 4, 3, 6, 5 };
             SplitIntoHalf(arr);
-             */
 
+            two pointer - opposite direction - HasPairWithSum: 
+
+            var arr = new int[] { 1, 2, 3, 4, 6 };
+            var result = TwoPointerProblems.HasPairWithSum(arr, 5);
+            if (!result) Console.WriteLine("No Pair Makes the Target: " + 5);
+            else Console.WriteLine("Result: " + result);
+
+            two pointer - same direction - HasPairWithSum: 
+
+            var arr = new int[] { 1, 1, 2, 2, 3, 3 };
+            int k = TwoPointerProblems.RemoveDuplicates(arr);
+            for (int i = 0; i < k; i++)
+            {
+                Console.Write(arr[i]+" ");
+            }
+
+            var array = new int[] { 3, 2, 4 };
+            int target = 6;
+            var result = TwoSum(array, target);
+            Console.WriteLine(string.Join(",", result));
+            
+            var nums = new List<int> { 3, 2, 4, 3, 2 };
+            TwoPointerProblems.RemoveDuplicates(nums); 
+
+            var nums = new int[] { 4, 2, 7, 1, 3 };
+            TwoPointerProblems.QuickSort(nums, 0, nums.Length - 1);
+            Console.WriteLine(string.Join(",", nums));
+            
+            var arr = new int[] { 2, 1, 4, 3, 5 };
+            var target = 9;
+            var output = TwoPointerProblems.SumofPairHashMap(arr, target);
+            Console.WriteLine("the final output: [" + string.Join(",", output)+"]"); 
+
+            var array = new int[] { 1, 1, 2, 3, 4, 4, 5, 6 };
+            int k = TwoPointerProblems.ShortArrayWithUniqueValues(array);
+            for(int i=0;i<k;i++)
+            {
+                Console.Write(array[i]+" ");
+            }
+            var array = new int[] { 0, 3, 0, 7, 0, 1 };
+            var result = TwoPointerProblems.MoveZeros(array);
+
+            var array = new int[] { 1, 2, 3, 4, 2, 3, 1 };
+            int target = 2;
+            var result = TwoPointerProblems.RemoveOccurance(array, target);
+
+            var arr = new int[] { -2, -1, 0, 1, 2 };
+            TwoPointerProblems.SortedSquare(arr);
+            */
+            var arr = new int[] { 1, 1, 2, 2, 2 };
+            int k = TwoPointerProblems.RemoveDuplicatesII(arr);
+            for (int i = 0; i < k; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
             Console.ReadLine();
+        }
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            int left = 0;
+            int right = nums.Length - 1;
+            while (left < right)
+            {
+                int sum = nums[left] + nums[right];
+                if (sum == target)
+                    return new int[] { left, right };
+                if (sum < target)
+                    left++;
+                else
+                    right--;
+            }
+            return new int[] { -1, -1 };
         }
         /// <summary>
         /// Before passing an array into this method please consider passing that as a sorted array. 
@@ -159,3 +231,5 @@
         #endregion
     }
 }
+
+

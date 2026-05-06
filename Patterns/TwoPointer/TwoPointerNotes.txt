@@ -1,0 +1,46 @@
+﻿Must Do Problems (Two Pointers): 
+
+1, Reverse array      ✅ 
+2, Two sum (sorted)   ✅
+3, Remove duplicates  ✅
+4, Move zeros		  ✅      
+
+Two Pointers Core: 
+	THUMP RULE of when the array should be sorted and when its not. 
+	- position based : not needed. 
+	- value based or compare values : yes the array must be sorted. 
+
+
+TYPES OF TWO POINTERS: 
+1, Opposite Direction (Most Common)
+2, Same Direction (Slow and Fast)
+
+OPPOSITE DIRECTION: 
+Two sum (sorted): 
+ When comes to this Problem, I have learn a new thing.
+ inside the while loop, while(left < right), there is an if else condition after we know the sum. 
+ if the sum is less than target then move the left one forward.
+ if the sum is greater than target then move the right one forward. 
+
+ so if you are move the right forward which means you are decreasing the value.
+ so if you are move the left forward which means you are increasing the value. 
+
+ SAME DIRECTION: 
+ Remove Duplicates (sorted)
+
+ Remember this When comes to Two Pointer - Same Direction Problem: 
+
+ 1, instead of left and right we will be using the slow and fast variable. 
+ 2, This will be the Initial Value of both :
+	 Slow - 0
+	 Fast - 1 
+ 3, Both are moving forward but in different way, 
+ 4, Fast moves for each iteration
+    Slow moves only when the array[slow] not equals to array[fast]. 
+ 5, When slows moves we need to assign the value of array[fast] to array[slow] i.e, array[slow] = array[fast];
+
+ note: Remove Duplicate, this does not means remove the duplicate instead it makes the unique value at the beginning we can took that values by size k.
+
+
+
+
