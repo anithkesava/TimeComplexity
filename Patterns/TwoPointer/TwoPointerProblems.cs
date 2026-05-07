@@ -133,6 +133,19 @@ namespace Big_O_notation.Patterns.TwoPointer
             }
             return result;
         }
+        //public static int RemoveDuplicatesII(int[] arr)
+        //{
+        //    int slow = 1;
+        //    for (int fast = 1; fast < arr.Length; fast++)
+        //    {
+        //        if (arr[slow - 1] != arr[fast])
+        //        {
+        //            arr[slow] = arr[fast];
+        //            slow++;
+        //        }
+        //    }
+        //    return slow;
+        //}
         public static int RemoveDuplicatesII(int[] arr)
         {
             int slow = 2;
@@ -144,7 +157,8 @@ namespace Big_O_notation.Patterns.TwoPointer
                     slow++;
                 }
             }
-            return slow + 1;
+
+            return slow;
         }
     }
 }

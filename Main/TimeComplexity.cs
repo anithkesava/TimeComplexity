@@ -63,12 +63,19 @@ namespace Big_O_notation.Main
             var arr = new int[] { -2, -1, 0, 1, 2 };
             TwoPointerProblems.SortedSquare(arr);
             */
-            var arr = new int[] { 1, 1, 2, 2, 2 };
+            var arr = new int[] { 0, 1, 1, 1, 2, 2, 2, 3 };
             int k = TwoPointerProblems.RemoveDuplicatesII(arr);
+            Console.WriteLine("the final array of arr[slow-1]: ");
             for (int i = 0; i < k; i++)
             {
                 Console.Write(arr[i] + " ");
             }
+            //int j = TwoPointerProblems.RemoveDuplicatesIINew(arr);
+            //Console.WriteLine("\n the final array of arr[slow-2]: ");
+            //for (int i = 0; i < j; i++)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
             Console.ReadLine();
         }
         public static int[] TwoSum(int[] nums, int target)
