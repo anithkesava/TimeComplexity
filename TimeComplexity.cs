@@ -2,7 +2,7 @@
 {
     public class TimeComplexity
     {
-        public static void Main(string[] args)
+        public static void LMain(string[] args)
         {
             /*
             the below codes are used to invoke methods to know whether these are works as expected 

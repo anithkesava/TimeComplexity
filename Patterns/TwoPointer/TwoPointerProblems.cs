@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -133,6 +134,7 @@ namespace Big_O_notation.Patterns.TwoPointer
             }
             return result;
         }
+        //commenting out since it works fine for remove duplicate II but logic is not correct. 
         //public static int RemoveDuplicatesII(int[] arr)
         //{
         //    int slow = 1;
@@ -157,8 +159,66 @@ namespace Big_O_notation.Patterns.TwoPointer
                     slow++;
                 }
             }
-
             return slow;
+        }
+        public static bool IsValidPalindrome(string str)
+        {
+            if (str.Length < 2)
+                return false;
+            str = RemoveSpecialCharacters(str);
+            str = str.ToLower().Trim().Replace(" ", "");
+            int left = 0;
+            int right = str.Length - 1;
+            while (left < right)
+            {
+                if (str[left] == str[right])
+                {
+                    left++;
+                    right--;
+                }
+                else
+                    return false;
+            }
+            return true;
+        }
+        private static string RemoveSpecialCharacters(string str)
+        {
+            var list = new List<char> { '!', '@', '$', '#', '%', '^', '&', '*', '_', '-', '+', '=', '?', '<', '>', '.', ',', '|', '/', '\\', '~', '`' };
+            foreach (var l in list)
+            {
+                if (str.Contains(l))
+                    str = str.Replace(l, ' ');
+            }
+            return str;
+        }
+
+        public static bool IsValidPalindromeII(string str)
+        {
+            int left = 0;
+            int right = str.Length - 1;
+
+            while (left < right)
+            {
+                while (left < right && !char.IsLetterOrDigit(str[left]))
+                {
+                    left++;
+                }
+
+                while (left < right && !char.IsLetterOrDigit(str[right]))
+                {
+                    right--;
+                }
+
+                if (char.ToLower(str[left]) != char.ToLower(str[right]))
+                {
+                    return false;
+                }
+
+                left++;
+                right--;
+            }
+
+            return true;
         }
     }
 }
