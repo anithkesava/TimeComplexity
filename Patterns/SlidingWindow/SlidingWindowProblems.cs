@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Big_O_notation.Patterns.SlidingWindow
 {
@@ -37,28 +38,32 @@ namespace Big_O_notation.Patterns.SlidingWindow
             return MaxSum;
         }
 
-        //alternative approach: 
-        public static int AlternativeSumSubarray(int[] array, int k)
+        public static double MaximumAverageOfSubArray(int[] array, int k)
         {
             int lastWindowElement = array.Length - 1;
-            int MaxSum = int.MinValue;
+            int MaxAverage = 0;
             int currentWindowSum = 0;
             int left = 0;
             int right = k - 1;
-
-            for (int i = 0; i <= right; i++)
-            {
-                currentWindowSum += array[i];
-            }
             while (right <= lastWindowElement)
             {
-                currentWindowSum = (currentWindowSum - array[left - 1]) + array[right];
-                MaxSum = Math.Max(MaxSum, currentWindowSum);
+                if (left == 0)
+                {
+                    for (int i = 0; i <= right; i++)
+                    {
+                        currentWindowSum += array[i];
+                    }
+                }
+                else
+                {
+                    currentWindowSum = (currentWindowSum - array[left - 1]) + array[right];
+                }
+                int AverageSum = currentWindowSum / k;
+                MaxAverage = Math.Max(MaxAverage, AverageSum);
                 left++;
                 right++;
             }
-            return MaxSum;
-
+            return MaxAverage;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Big_O_notation.Patterns.SlidingWindow;
 using Big_O_notation.Patterns.TwoPointer;
+using System.Net.WebSockets;
 
 namespace Big_O_notation.Main
 {
@@ -83,12 +84,16 @@ namespace Big_O_notation.Main
 
             var str = "@#$";
             TwoPointerProblems.IsValidPalindromeII(str) ;
-            */
-
 
             var array = new int[] { 1, 3, 4, 1, 2, 2 };
             int k = 3;
-            SlidingWindowProblems.AlternativeSumSubarray(array, k);
+            SlidingWindowProblems.MaxSumSubarray(array, k);
+            */
+
+            var array = new int[] { 1, 2, 3, 4, 5, 6 };
+            var k = 3;
+            SlidingWindowProblems.MaximumAverageOfSubArray(array, k);
+
             Console.ReadLine();
         }
         public static int[] TwoSum(int[] nums, int target)
