@@ -5,4 +5,17 @@ Longest substring without repeating characters
 Minimum window substring
 
 
+Sliding window: 
+window -  a portion that contains a continous elements. 
+sliding window - moves to the next portion of continous elements. 
 
+types: 
+fixed window : window size will be given in the problem.
+variable window : window size will be determined by us. expands and shrinks accordingly. 
+
+sliding window will be using the two pointer - same direction. even with the help of the two pointer itself we will be create window. 
+	1, left  - start of the window
+	2, right - end of the window
+
+	fixed window: left++;right++;
+	variable window: left++;(shrinks), right++;(expands)
