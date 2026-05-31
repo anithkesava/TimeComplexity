@@ -41,7 +41,7 @@ namespace Big_O_notation.Patterns.SlidingWindow
         public static double MaximumAverageOfSubArray(int[] array, int k)
         {
             int lastWindowElement = array.Length - 1;
-            int MaxAverage = 0;
+            double MaxAverage = double.MinValue;
             int currentWindowSum = 0;
             int left = 0;
             int right = k - 1;
@@ -58,12 +58,38 @@ namespace Big_O_notation.Patterns.SlidingWindow
                 {
                     currentWindowSum = (currentWindowSum - array[left - 1]) + array[right];
                 }
-                int AverageSum = currentWindowSum / k;
+                double AverageSum = (double)currentWindowSum / k;
                 MaxAverage = Math.Max(MaxAverage, AverageSum);
                 left++;
                 right++;
             }
             return MaxAverage;
+        }
+
+        public static int?[] FirstNegativeValueInEveryWindow(int[] arr, int k)
+        {
+            int left = 0;
+            int right = k - 1;
+            int lastWindowIndex = arr.Length - 1;
+            int n = (arr.Length - k) + 1;
+            int?[] array = new int?[n];
+            int index = 0;
+
+            while (right <= lastWindowIndex)
+            {
+                for (int i = left; i <= right; i++)
+                {
+                    if (arr[i] < 0)
+                    {
+                        array[index] = arr[i];
+                        break;
+                    }
+                }
+                index++;
+                left++;
+                right++;
+            }
+            return array;
         }
     }
 }

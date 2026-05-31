@@ -88,12 +88,15 @@ namespace Big_O_notation.Main
             var array = new int[] { 1, 3, 4, 1, 2, 2 };
             int k = 3;
             SlidingWindowProblems.MaxSumSubarray(array, k);
-            */
+            
 
             var array = new int[] { 1, 2, 3, 4, 5, 6 };
             var k = 3;
             SlidingWindowProblems.MaximumAverageOfSubArray(array, k);
-
+            */
+            var arr = new int[] { 12, -1, -7, 8, -15, 30 };
+            int k = 3;
+            SlidingWindowProblems.FirstNegativeValueInEveryWindow(arr, k);
             Console.ReadLine();
         }
         public static int[] TwoSum(int[] nums, int target)
