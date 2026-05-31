@@ -1,4 +1,5 @@
-﻿using Big_O_notation.Patterns.TwoPointer;
+﻿using Big_O_notation.Patterns.SlidingWindow;
+using Big_O_notation.Patterns.TwoPointer;
 
 namespace Big_O_notation.Main
 {
@@ -79,10 +80,15 @@ namespace Big_O_notation.Main
 
             var str = "Malayyyalam@#$" ;
             TwoPointerProblems.IsValidPalindrome(str) ;
-            */
 
             var str = "@#$";
             TwoPointerProblems.IsValidPalindromeII(str) ;
+            */
+
+
+            var array = new int[] { 1, 3, 4, 1, 2, 2 };
+            int k = 3;
+            SlidingWindowProblems.AlternativeSumSubarray(array, k);
             Console.ReadLine();
         }
         public static int[] TwoSum(int[] nums, int target)
@@ -101,6 +107,8 @@ namespace Big_O_notation.Main
             }
             return new int[] { -1, -1 };
         }
+
+        #region Search Algorithms
         /// <summary>
         /// Before passing an array into this method please consider passing that as a sorted array. 
         /// </summary>
@@ -129,6 +137,7 @@ namespace Big_O_notation.Main
             }
             return -1; // not found
         }
+        #endregion end of Search Algorithms
         /// <summary>
         /// find the maximum number from the array by using only DSA
         /// </summary>
