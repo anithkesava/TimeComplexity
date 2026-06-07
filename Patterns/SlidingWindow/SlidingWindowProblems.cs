@@ -11,6 +11,7 @@ namespace Big_O_notation.Patterns.SlidingWindow
 {
     public class SlidingWindowProblems
     {
+        //fixed window size - problems
         public static int MaxSumSubarray(int[] array, int size)
         {
             int lastWindowElement = array.Length - 1;
@@ -90,6 +91,29 @@ namespace Big_O_notation.Patterns.SlidingWindow
                 right++;
             }
             return array;
+        }
+
+        //variable window size - problems
+
+        public static int SumSmallestSubarrayElementsIsTheTarget(int[] array, int target)
+        {
+            int left = 0;
+            int MinLength = int.MaxValue;
+            int sum = 0;
+
+            for (int right = 0; right < array.Length; right++)
+            {
+                sum += array[right];
+                while (sum >= target)
+                {
+                    int currentlength = (right - left) + 1;
+                    MinLength = Math.Min(currentlength, MinLength);
+
+                    sum -= array[left];
+                    left++;
+                }
+            }
+            return MinLength;
         }
     }
 }
