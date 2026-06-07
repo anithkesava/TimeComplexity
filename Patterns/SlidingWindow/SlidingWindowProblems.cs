@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
-
-namespace Big_O_notation.Patterns.SlidingWindow
+﻿namespace Big_O_notation.Patterns.SlidingWindow
 {
     public class SlidingWindowProblems
     {
@@ -114,6 +105,25 @@ namespace Big_O_notation.Patterns.SlidingWindow
                 }
             }
             return MinLength;
+        }
+
+        public static int LongestSubstringWithoutRepeatingChar(string str)
+        {
+            int longestLength = int.MinValue;
+            int left = 0;
+            var set = new HashSet<char>();
+            for (int right = 0; right < str.Length; right++)
+            {
+                while (set.Contains(str[right]))
+                {
+                    set.Remove(str[left]);
+                    left++;
+                }
+                set.Add(str[right]);
+                int currentlength = (right - left) + 1;
+                longestLength = Math.Max(longestLength, currentlength);
+            }
+            return longestLength;
         }
     }
 }

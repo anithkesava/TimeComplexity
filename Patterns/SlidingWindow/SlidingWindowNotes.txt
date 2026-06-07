@@ -1,8 +1,18 @@
 ﻿Must Do Problems (Sliding Window): 
 
-Max sum subarray (k size) ✅
-Longest substring without repeating characters 
-Minimum window substring 
+1, Max sum subarray (k size) ✅
+2, Longest substring without repeating characters ✅ (note if i done this problem by myself then i will get placed in micorsoft for sure)
+
+Almost done with small mistake that is, 
+
+	- used this – set.Remove(arr[right]);
+	- instead of this – set.Remove(arr[left]);
+	- because we want to remove the element from the left most not the right so this action makes out of sync on set 
+	  and the current window. 
+	- after that fix we will receive the expected behavior. 
+
+
+3, Minimum window substring ✅
  
 
 Sliding window: 
