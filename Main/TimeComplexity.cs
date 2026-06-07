@@ -97,11 +97,14 @@ namespace Big_O_notation.Main
             var arr = new int[] { 12, -1, -7, 8, -15, 30 };
             int k = 3;
             SlidingWindowProblems.FirstNegativeValueInEveryWindow(arr, k);
-            */
 
             var array = new int[] { 1, 2, 3, 4, 5};
             int target = 7;
             SlidingWindowProblems.SumSmallestSubarrayElementsIsTheTarget(array, target);
+            */
+
+            string str = "abbc";
+            SlidingWindowProblems.LongestSubstringWithoutRepeatingChar(str) ;
             Console.ReadLine();
         }
         public static int[] TwoSum(int[] nums, int target)
