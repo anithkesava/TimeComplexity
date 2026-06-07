@@ -1,9 +1,9 @@
 ﻿Must Do Problems (Sliding Window): 
 
-Max sum subarray (k size)
-Longest substring without repeating characters
-Minimum window substring
-
+Max sum subarray (k size) ✅
+Longest substring without repeating characters 
+Minimum window substring 
+ 
 
 Sliding window: 
 window -  a portion that contains a continous elements. 
