@@ -1,4 +1,5 @@
-﻿using Big_O_notation.Patterns.SlidingWindow;
+﻿using Big_O_notation.LeetCodeProblems;
+using Big_O_notation.Patterns.SlidingWindow;
 using Big_O_notation.Patterns.TwoPointer;
 using System.Net.WebSockets;
 
@@ -101,12 +102,29 @@ namespace Big_O_notation.Main
             var array = new int[] { 1, 2, 3, 4, 5};
             int target = 7;
             SlidingWindowProblems.SumSmallestSubarrayElementsIsTheTarget(array, target);
-            */
 
             string str = "abbc";
             SlidingWindowProblems.LongestSubstringWithoutRepeatingChar(str) ;
+
+            var arr = new int[] { 1, 1, 2, 2, 3, 4, 4 };
+            var result = LeetCode.RemoveDuplicates(arr);
+            for(int i =0;i<result;i++)
+            {
+                Console.Write(arr[i]+" ");
+            }
+            */
+
+            var arr = new int[] { 1, 1, 1, 2, 2, 3 };
+            var result = LeetCode.RemoveDuplicatesII(arr);
+            for(int i = 0; i < result; i++)
+            {
+                Console.Write(arr[i]+" ");
+            }
+
             Console.ReadLine();
         }
+        
+
         public static int[] TwoSum(int[] nums, int target)
         {
             int left = 0;
