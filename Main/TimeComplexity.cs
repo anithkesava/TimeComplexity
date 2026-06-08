@@ -112,14 +112,14 @@ namespace Big_O_notation.Main
             {
                 Console.Write(arr[i]+" ");
             }
-            */
 
-            var arr = new int[] { 1, 1, 1, 2, 2, 3 };
-            var result = LeetCode.RemoveDuplicatesII(arr);
-            for(int i = 0; i < result; i++)
-            {
-                Console.Write(arr[i]+" ");
-            }
+            var arr = new int[] { 4, 1, 2, 4, 3, 2, 1 };
+            var result = LeetCode.RemoveDuplicateUnsorted(arr);
+            Console.WriteLine(string.Join(",", result));
+
+            */
+            string str = "programming";
+            var output = LeetCode.RemoveDuplicateFromString(str);
 
             Console.ReadLine();
         }
