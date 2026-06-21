@@ -101,7 +101,7 @@ namespace Big_O_notation.Main
             var array = new int[] { 1, 2, 3, 4, 5};
             int target = 7;
             SlidingWindowProblems.SumSmallestSubarrayElementsIsTheTarget(array, target);
-            */
+            
 
             string str = "abbc";
             SlidingWindowProblems.LongestSubstringWithoutRepeatingChar(str) ;
@@ -119,11 +119,15 @@ namespace Big_O_notation.Main
 
             string str = "programming";
             var output = LeetCode.RemoveDuplicateFromString(str);
-            */
 
             var arr = new int[] {1, 2, 3, 4, 5, 6 };
             var target = 10;
             ReviseSlidingWindow.SmallestSumSubarray(arr, target);
+            */
+
+            var arr = new int[] { 1, 2, 3, 4, 5 };
+            var target = 2;
+            ReviseSlidingWindow.MaxSumSubarray(arr, target);
 
             Console.ReadLine();
         }
