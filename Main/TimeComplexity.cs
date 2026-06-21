@@ -105,6 +105,26 @@ namespace Big_O_notation.Main
 
             string str = "abbc";
             SlidingWindowProblems.LongestSubstringWithoutRepeatingChar(str) ;
+
+            var arr = new int[] { 1, 1, 2, 2, 3, 4, 4 };
+            var result = LeetCode.RemoveDuplicates(arr);
+            for(int i =0;i<result;i++)
+            {
+                Console.Write(arr[i]+" ");
+            }
+
+            var arr = new int[] { 4, 1, 2, 4, 3, 2, 1 };
+            var result = LeetCode.RemoveDuplicateUnsorted(arr);
+            Console.WriteLine(string.Join(",", result));
+
+            string str = "programming";
+            var output = LeetCode.RemoveDuplicateFromString(str);
+            */
+
+            var arr = new int[] {1, 2, 3, 4, 5, 6 };
+            var target = 10;
+            ReviseSlidingWindow.SmallestSumSubarray(arr, target);
+
             Console.ReadLine();
         }
         public static int[] TwoSum(int[] nums, int target)
