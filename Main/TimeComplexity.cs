@@ -123,11 +123,16 @@ namespace Big_O_notation.Main
             var arr = new int[] {1, 2, 3, 4, 5, 6 };
             var target = 10;
             ReviseSlidingWindow.SmallestSumSubarray(arr, target);
-            */
 
             var arr = new int[] { 1, 2, 3, 4, 5 };
             var target = 2;
             ReviseSlidingWindow.MaxSumSubarray(arr, target);
+            */
+
+            var arr = new int[] { 1, 2, 3, 4, 5, 6 };
+            int threshold = 4;
+            int size = 2;
+            ReviseSlidingWindow.AverageGreaterThanOrEqualThreshold(arr,size, threshold);
 
             Console.ReadLine();
         }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Big_O_notation.Patterns.SlidingWindow
 {
     public class ReviseSlidingWindow
@@ -27,7 +26,6 @@ namespace Big_O_notation.Patterns.SlidingWindow
             }
             return MinWindowSize;
         }
-
         public static int MaxSumSubarray(int[] arr, int size)
         {
             int left = 0;
@@ -48,14 +46,37 @@ namespace Big_O_notation.Patterns.SlidingWindow
                 {
                     currentWindowSum = (currentWindowSum - arr[left - 1]) + arr[right];
                 }
-
                 right++;
                 left++;
                 maxSubarray = Math.Max(maxSubarray, currentWindowSum);
-
-
             }
             return maxSubarray;
+        }
+        public static int AverageGreaterThanOrEqualThreshold(int[] arr, int size, int threshold)
+        {
+            int windowSum = 0;
+            int left = 0;
+            int right = size - 1;
+            int subarrayCount = 0;
+            int average = 0;
+            while (right < arr.Length) //rewriting this - no lastElementIndex is required
+            {
+                if (left == 0)
+                {
+                    for (int i = 0; i <= right; i++)
+                    {
+                        windowSum += arr[i];
+                    }
+                }
+                else
+                    windowSum = (windowSum - arr[left-1]) + arr[right];
+                average = windowSum / size;
+                if (average >= threshold)
+                    subarrayCount++;
+                left++;
+                right++;
+            }
+            return subarrayCount;
         }
     }
 }
